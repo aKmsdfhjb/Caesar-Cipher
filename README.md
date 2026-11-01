@@ -62,4 +62,4 @@ A Caesar cipher is a historical substitution cipher and is trivially breakable. 
 
 ## License
 
-MIT — see [LICENSE](LICENSE).
+No license file is currently included. The repository remains under its existing copyright status until a license is chosen.

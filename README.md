@@ -1,34 +1,65 @@
-# Caesar Cipher (Python)
+# Caesar Cipher
 
-A simple Python implementation of the **Caesar Cipher**, one of the oldest and simplest forms of encryption. This project allows users to take a string and shift its characters by a specified amount to encode or decode messages.
+An interactive Caesar cipher implementation with a Python function and a browser-based interface. The web version runs entirely in the browser and does not send text to a server.
 
+![Python](https://img.shields.io/badge/Python-3.10%2B-3776AB?style=flat-square&logo=python&logoColor=white)
+![Frontend](https://img.shields.io/badge/Frontend-Vanilla%20JS-f0db4f?style=flat-square)
+![License](https://img.shields.io/badge/License-MIT-171715?style=flat-square)
 
+## Live interface
 
-## 🚀 Features
-* **Encryption:** Convert plain text into ciphertext using a numerical shift.
-* **Decryption:** Reverse the process to reveal the original message.
-* **Special Character Handling:** Maintains spaces and punctuation while only shifting alphabetic characters.
-* **Customizable Shifts:** Supports any integer shift (e.g., ROT13).
+The GitHub Pages workflow is included. After enabling **Settings → Pages → Build and deployment → GitHub Actions**, the site will be available at:
 
-## 🛠️ How it Works
-The Caesar Cipher works by "shifting" each letter in the alphabet by a fixed number of positions. For example, with a shift of **3**:
-* `A` becomes `D`
-* `B` becomes `E`
-* `C` becomes `F`
+[Open the interactive Caesar Cipher](https://aKmsdfhjb.github.io/Caesar-Cipher/)
 
-In this project, the `encrypt` and `decrypt` functions use Python's index-based list manipulation to handle these shifts efficiently.
+## Features
 
-## 💻 Usage
-To run the cipher, simply call the functions within `main.py`:
+- Encrypt and decrypt alphabetic text with a shift from 1 to 25.
+- Preserve uppercase/lowercase, spaces, punctuation and digits.
+- Validate shift input and copy the result.
+- Responsive editorial interface using the project's ivory, serif, hairline-rule and vermilion metadata design.
+- Browser implementation requires no API key or backend.
 
-```python
-text = "Hello World"
-shift = 13
+## How it works
 
-# Encrypting
-secret = encrypt(text, shift)
-print(secret) # "Uryyb Jbeyq"
+Each letter is mapped to an alphabet index, shifted by the selected amount, then mapped back. Decryption applies the inverse shift.
 
-# Decrypting
-original = decrypt(secret, shift)
-print(original) # "Hello World"
+```mermaid
+flowchart TD
+ A[Enter message] --> B[Validate shift 1–25]
+ B --> C{Encrypt or decrypt?}
+ C -->|Encrypt| D[Add shift]
+ C -->|Decrypt| E[Subtract shift]
+ D --> F[Wrap index modulo 26]
+ E --> F
+ F --> G[Preserve non-letters and case]
+ G --> H[Display transformed message]
+```
+
+## Run locally
+
+Open `index.html` in a browser. To run the Python implementation:
+
+```bash
+python Caesar_Cipher.py
+```
+
+The reusable Python function is `caesar(text, shift, encrypt=True)`.
+
+## Project structure
+
+- `Caesar_Cipher.py` — Python cipher function and original CLI experiment.
+- `index.html` — standalone interactive browser interface.
+- `.github/workflows/pages.yml` — GitHub Pages deployment workflow.
+
+## Documentation
+
+The README contains the architecture and usage guide. Additional implementation notes can be kept in `docs/` and linked here. GitHub's separate Wiki feature must be enabled in repository settings before a native Wiki can be populated.
+
+## Security note
+
+A Caesar cipher is a historical substitution cipher and is trivially breakable. Use it only for learning and demonstrations, never for passwords, private messages or real security.
+
+## License
+
+MIT — see [LICENSE](LICENSE).

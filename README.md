@@ -71,3 +71,4 @@ No license file is currently included. The repository remains under its existing
 - [Architecture and deployment](docs/wiki/Architecture.md)
 
 The repository keeps a version-controlled wiki source under `docs/wiki/`.
+- [Video production brief](docs/video/production-brief.md)

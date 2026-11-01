@@ -12,7 +12,7 @@ Open `index.html` in a browser for the client-side interface.
 ## Key repository references
 
 - [Source repository](https://github.com/aKmsdfhjb/Caesar-Cipher)
-- [README](../../README.md)
+- [README](https://github.com/aKmsdfhjb/Caesar-Cipher#readme)
 - [Architecture](Architecture.md)
 
 ## Scope and limitations
